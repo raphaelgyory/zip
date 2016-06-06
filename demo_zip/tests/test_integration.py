@@ -23,7 +23,7 @@ class IntegrationTests(StaticLiveServerTestCase):
     def setUpClass(cls):
         super(IntegrationTests, cls).setUpClass()
         # we do not display
-        cls.display = Display(visible=1, size=(1024, 768))
+        cls.display = Display(visible=0, size=(1024, 768))
         cls.display.start()
         cls.selenium = WebDriver()
         cls.request = RequestFactory()
