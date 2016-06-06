@@ -1,0 +1,140 @@
+/* These styles are generated from project.scss. */
+
+.alert-debug {
+  color: black;
+  background-color: white;
+  border-color: #d6e9c6;
+}
+
+.alert-error {
+  color: #b94a48;
+  background-color: #f2dede;
+  border-color: #eed3d7;
+}
+
+/* This is a fix for the bootstrap4 alpha release */
+@media (max-width: 47.9em) {
+  .navbar-nav .nav-item {
+    float: none;
+    width: 100%;
+    display: inline-block;
+  }
+
+  .navbar-nav .nav-item + .nav-item {
+    margin-left: 0;
+  }
+
+  .nav.navbar-nav.pull-xs-right {
+    float: none !important;
+  }
+}
+
+/* Display django-debug-toolbar.
+   See https://github.com/django-debug-toolbar/django-debug-toolbar/issues/742
+   and https://github.com/pydanny/cookiecutter-django/issues/317
+*/
+[hidden][style="display: block;"] {
+  display: block !important;
+}
+
+/*
+ * SOURCE: https://codepen.io/akhmed_gaziev/pen/JdVQQm
+ */
+
+.file_input_div {
+ 
+  height: 40px;
+}
+
+.file_input {
+  float: left;
+}
+
+#file_input_text_div {
+  width: 200px;
+  margin-top: -8px;
+  margin-left: 5px;
+}
+
+.none {
+  display: none;
+}
+
+/* EOF */
+
+.toggle_input_div {
+	padding-top: 20px;
+	padding-bottom: 20px;
+}
+
+.toggle_input_div .help {
+	color: rgba(0, 0, 0, 0.26);
+	font-size: 16px;
+	font-weight: 400;
+}
+
+.content {
+	padding:20px;
+}
+
+
+/* Home */
+.home-section {
+  position: relative;
+  height: 800px;
+  width: auto;
+  background-color: #f3f3f3;
+  background: url('/static/images/slide01.jpg') center 30% no-repeat;
+  background-size: cover;
+}
+
+
+
+.logo-font {
+  font-family: 'Roboto', 'Helvetica', 'Arial', sans-serif;
+  line-height: 1;
+  color: black;
+  font-weight: 500;
+}
+
+.home-slogan {
+  font-size: 60px;
+  padding-top: 160px;
+}
+
+.home-sub-slogan {
+  font-size: 42px;
+  padding-top: 24px;
+  padding-bottom: 164px;
+}
+
+.mdl-layout-title .a {
+	font-size: 20px;
+	font-weight: 400;
+}
+
+/* templatetags inputs */
+
+.ttag_input {
+	padding-bottom:20px;
+}
+
+/* login form */
+.login div {
+	padding-bottom: 24px;
+}
+
+/* cards */
+<style>
+
+
+.demo-card-square.mdl-card {
+  width: 320px;
+  height: 320px;
+}
+.demo-card-square > .mdl-card__title {
+  color: #fff;
+  background:
+    url('../assets/demos/dog.png') bottom right 15% no-repeat #46B6AC;
+}
+</style>

@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+{% load i18n %}
+
+{% block title %}{% trans 'Please confirm' %}{% endblock %}
+
+{% block content %}
+<div class="mdl-grid">
+	<div class="mdl-layout-spacer"></div>
+	<div class="mdl-cell mdl-cell--6-col mdl-cell--8-col-tablet  mdl-color--white mdl-shadow--4dp content ">
+		<form action="" method="post">
+			{% csrf_token %}
+		    <p>{% trans 'Are you sure you want to delete' %} "{{ object }}"?</p>
+		    <input type="submit" value="Confirm" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent confirm_delete_btn"/>
+		</form>
+	</div>
+	<div class="mdl-layout-spacer"></div>
+</div>
+{% endblock content %}

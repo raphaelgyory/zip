@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+{% load i18n %}
+{% load zip_templatetags %}
+
+{% block content %}
+<div class="mdl-grid">
+	<div class="mdl-layout-spacer"></div>
+	<div class="mdl-cell mdl-cell--6-col mdl-cell--8-col-tablet  mdl-color--white mdl-shadow--4dp content ">
+		<h3>{% trans "Zip applications" %}</h3>
+		<ul class="demo-list-three mdl-list">
+		{% for app in object_list %}
+			{% zip_app_row app %}
+		{% endfor %}
+		</ul>
+	</div>
+	<div class="mdl-layout-spacer"></div>
+</div>
+{% endblock content %}

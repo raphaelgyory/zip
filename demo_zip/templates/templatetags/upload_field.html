@@ -1,0 +1,51 @@
+<div class="ttag_input file_input_div">
+	<div class="file_input">
+	  	<label for="{{ upload_field.auto_id }}" class="image_input_button mdl-button mdl-js-button mdl-button--fab mdl-button--mini-fab mdl-js-ripple-effect ">
+	    	<i class="material-icons">attach_file</i>
+	    	<span class="none">
+	    		<input class="mdl-textfield__input {% if upload_field.errors %} is-invalid {% endif %}" id="{{ upload_field.auto_id }}" type="file" value="{{ upload_field.value }}" name="{{ upload_field.name }}">
+	    	</span>
+	  		<span class="mdl-button__ripple-container"><span class="mdl-ripple"></span></span></label>	
+	</div>
+	<div id="file_input_text_div_{{ upload_field.auto_id }}" class="mdl-textfield mdl-js-textfield textfield-demo is-disabled is-upgraded">
+	  	<input class="file_input_text mdl-textfield__input" disabled="" readonly="" value="{{ upload_field.value }}" id="file_input_text_{{ upload_field.auto_id }}" type="text"{% if upload_field.errors %} style="border-bottom:1px solid red;" {% endif %}>
+	  	<label class="mdl-textfield__label" for="file_input_text"></label>
+	  	{% if upload_field.errors %}<span style="font-size:12px;color:red;">{{ upload_field.errors.as_text }}</span> {% endif %}
+	</div>
+	<br/>
+</div>
+
+<script>
+/*
+ * SOURCE: https://codepen.io/akhmed_gaziev/pen/JdVQQm
+ */
+
+var fileInputTextDiv = document.getElementById('file_input_text_div_{{ upload_field.auto_id }}');
+var fileInput = document.getElementById('{{ upload_field.auto_id }}');
+var fileInputText = document.getElementById('file_input_text_{{ upload_field.auto_id }}');
+fileInput.addEventListener('change', changeInputText);
+fileInput.addEventListener('change', changeState);
+
+function changeInputText() {
+  var str = fileInput.value;
+  var i;
+  if (str.lastIndexOf('\\')) {
+    i = str.lastIndexOf('\\') + 1;
+  } else if (str.lastIndexOf('/')) {
+    i = str.lastIndexOf('/') + 1;
+  }
+  fileInputText.value = str.slice(i, str.length);
+}
+
+function changeState() {
+  if (fileInputText.value.length != 0) {
+    if (!fileInputTextDiv.classList.contains("is-focused")) {
+      fileInputTextDiv.classList.add('is-focused');
+    }
+  } else {
+    if (fileInputTextDiv.classList.contains("is-focused")) {
+      fileInputTextDiv.classList.remove('is-focused');
+    }
+  }
+}
+</script>

@@ -1,0 +1,35 @@
+{% extends "base.html" %}
+
+{% load staticfiles %}
+{% load i18n %}
+{% load crispy_forms_tags %}
+{% load zip_templatetags %}
+
+
+{% block content %}
+<div class="mdl-grid">
+	<div class="mdl-layout-spacer"></div>
+	<div class="mdl-cell mdl-cell--6-col mdl-cell--8-col-tablet  mdl-color--white mdl-shadow--4dp content ">	
+		<h3>{% trans "Upload files" %}</h3>
+		
+		<form action="" method="POST" enctype="multipart/form-data">
+			
+			{% csrf_token %}
+			
+			{% input_field form.name %}
+			<br/>
+			{% input_field form.description %}
+			<br/><br/>
+			{% switch_field form.is_private %}
+			
+			{% upload_field form.file %}
+			<br/><br/>
+	      	<button id="upload-button" class="upload-button mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent" type="submit">
+	      		{% trans "Upload" %}
+	      	</button>
+			
+		</form>
+	</div>
+	<div class="mdl-layout-spacer"></div>
+</div>
+{% endblock content %}

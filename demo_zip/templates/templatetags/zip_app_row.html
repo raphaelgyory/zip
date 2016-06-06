@@ -1,0 +1,38 @@
+{% load i18n %}
+
+
+  <li class="mdl-list__item mdl-list__item--three-line app_row_{{ zip_application.id }}">
+    <span class="mdl-list__item-primary-content">
+      
+      <a href="{% url 'demo_zip:download' zip_application.id %}">{{ zip_application.name }}</a>
+      <span class="mdl-list__item-text-body">
+        {{ zip_application.description }}
+      </span>
+    </span>
+   		<span class="mdl-list__item-secondary-content">
+			<a class="mdl-list__item-secondary-action download_app_link_{{ zip_application.id }}" href="{% url 'demo_zip:download' zip_application.id %}">
+				<i class="material-icons">file_download</i> 
+			</a>
+				
+			
+		</span>
+    	{% if may_update %}
+    	<span class="mdl-list__item-secondary-content update_app_row_{{ zip_application.id }}">
+			<a class="mdl-list__item-secondary-action" href="{% url 'demo_zip:update' zip_application.id %}">
+				<i class="material-icons">edit</i>
+			</a>
+				
+			
+		</span>
+		{% endif %}
+      	{% if may_delete %}
+      	<span class="mdl-list__item-secondary-content delete_app_row_{{ zip_application.id }}">
+			<a class="mdl-list__item-secondary-action"  href="{% url 'demo_zip:delete' zip_application.id %}">
+				<i class="material-icons">delete</i>
+			</a>
+		</span>
+		{% endif %}
+</li>
+
+
+

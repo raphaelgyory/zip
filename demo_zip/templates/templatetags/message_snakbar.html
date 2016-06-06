@@ -1,0 +1,15 @@
+<script>
+var show = function() {
+ 	var notification = document.querySelector('.mdl-js-snackbar');
+    notification.MaterialSnackbar.showSnackbar(
+      {
+      	message: '{{ message }}'
+      }
+    );
+}
+
+window.onload = function(){
+    //time is set in milliseconds
+    setTimeout(show, 1000);
+};
+</script>

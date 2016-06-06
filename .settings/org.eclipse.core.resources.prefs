@@ -1,0 +1,12 @@
+eclipse.preferences.version=1
+encoding//config/settings/common.py=utf-8
+encoding//config/urls.py=utf-8
+encoding//demo_zip/forms.py=utf8
+encoding//demo_zip/models.py=utf8
+encoding//demo_zip/permissions.py=utf8
+encoding//demo_zip/tests/test_integration.py=utf8
+encoding//demo_zip/urls.py=utf-8
+encoding//demo_zip/views.py=utf-8
+encoding//zip/users/models.py=utf-8
+encoding//zip/users/urls.py=utf-8
+encoding//zip/users/views.py=utf-8

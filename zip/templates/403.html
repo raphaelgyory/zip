@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+{% load i18n %}
+
+{% block title %}Forbidden{% endblock %}
+
+{% block content %}
+<div class="mdl-grid">
+	<div class="mdl-layout-spacer"></div>
+	<div class="mdl-cell mdl-cell--6-col mdl-cell--8-col-tablet  mdl-color--white mdl-shadow--4dp content ">	
+		<h1 class="forbidden_view">{% trans 'Forbidden' %}</h1>
+		
+		<p>{% trans 'This resource is protected.' %}</p>
+	</div>
+	<div class="mdl-layout-spacer"></div>
+</div>
+{% endblock content %}
