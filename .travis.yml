@@ -10,6 +10,8 @@ before_install:
 
 language: python
 
+services: postgresql
+
 python:
   - "2.7"
 
@@ -17,5 +19,12 @@ install:
     - pip install -r requirements/local.txt
     - pip install -r requirements/test.txt
 
+before_script:
+  - psql -c "CREATE DATABASE zip;" -U postgres
+  - export DATABASE_URL="postgres://postgres:@127.0.0.1:5432/zip"
+
 script:
+    - python manage.py migrate
     - python -m pytest
+
+
